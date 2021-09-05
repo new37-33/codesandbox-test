@@ -153,3 +153,87 @@
 // console.log(arr4);
 //イコールで配列をコピーしてしまうと参照元が同じなので、元の配列の値も変わってしまう
 //そのため、配列をコピーしたい場合はスプレッド構文を用いる
+
+/**
+ * mapやfilterを使った配列の処理
+ */
+
+ //map 配列の要素を1つずつ処理して取り出す
+// const nameArr = ['田中', '山田', '岡本'];
+// for(let i = 0; i < nameArr.length; i++){
+//   console.log(`${i + 1}番目は${nameArr[i]}です。`);
+// }
+
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
+//returnされた結果に基づいて新しい配列nameArr2を生成
+
+//引数２つめにはインデックス番号が入ってくる
+// nameArr.map((name, index) => {
+//  console.log(`${index + 1}番目は${name}です。`); 
+// });
+//nameArrの要素を1つずつ処理する
+
+
+//filter 配列の中から条件に一致したものだけ取り出す
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 2 === 0;
+// });
+// console.log(newNumArr);
+
+//ちょっと応用
+// const newNameArr = nameArr.map((name) => {
+//   if(name === '岡本'){
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+
+// console.log(newNameArr);
+
+/**
+ * 三項演算子
+ */
+//if else みたいなことを一行で表現できる
+//ある条件 ? 条件がtrueの時 : 条件がfalseの時
+// const val1 = 1 < 0 ? 'trueです' : 'falseです';
+// console.log(val1);
+
+// const num = 1300;
+// //toLocaleString() → 3桁区切りでカンマを入れてくれる関数
+// const formattedNum = typeof num === 'number' ? num.toLocaleString() : '数値を入力してください';
+// console.log(formattedNum);
+
+//関数のreturn部分で三項演算子を使用
+// const checkSum = (num1, num2) => {
+//   return num1 + num2 > 100 ? '100を超えています' : '許容範囲内です';
+// }
+// console.log(checkSum(50, 60));
+
+/**
+ * 論理演算子の本当の意味を知ろう && ||
+ */
+// const flag1 = true;
+// const flag2 = false;
+
+// if(flag1 || flag2){
+//   console.log('１か２はtrueです');
+// }
+// if(flag1 && flag2){
+//   console.log('１も２もtrueです');
+// }
+
+// || → 左側がfalseのとき右側を返す (左がtrueなら左を返す)
+// const num = null; //　→　nullはfalse判定
+// const fee = num || '金額未設定です';
+// console.log(fee); // → 金額未設定です が返されている
+
+// && → 左側がtrueなら右側を返すtrue判定
+// (左側がfalseなら左側を返すfalse判定)
+// const num2 = null;
+// const fee2 = num2 && '何か設定されました';
+// console.log(fee2);
